@@ -5,7 +5,7 @@ export default function StudentInfo() {
     <main>
       <p>Kruti Mistry</p>
       <Link href="https://github.com/KrutiMistry094?tab=repositories">
-        Github repo
+        https://github.com
       </Link>
     </main>
   );
