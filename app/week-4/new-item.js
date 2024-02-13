@@ -6,7 +6,7 @@ export default function NewItem() {
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("Produce");
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const item = {
       name,
@@ -20,22 +20,22 @@ export default function NewItem() {
     setName("");
     setQuantity(1);
     setCategory("Produce");
-  }
+  };
 
   return (
-    <main>
-      <form onSubmit={handleSubmit}>
+    <main class="flex justify-center">
+      <form onSubmit={handleSubmit} className="m-4 p-4 bg-slate-800 text-black">
         <div>
           <input
             type="text"
-            value={name}
+            value=""
             onChange={(event) => setName(event.target.value)}
-            className=""
             placeholder="Item Name"
             required
+            className="text-black m-4 inline-block border rounded-md font-medium p-3 shadow-xl pr-32"
           />
         </div>
-        <div>
+        <div className="flex justify-between">
           <input
             type="number"
             value={quantity}
@@ -43,12 +43,12 @@ export default function NewItem() {
             max="99"
             onChange={(event) => setQuantity(event.target.value)}
             required
-           
+            className="text-black m-4  inline-block border rounded-md font-medium p-3 shadow-xl"
           />
           <select
-            
             value={category}
             onChange={(event) => setCategory(event.target.value)}
+            className="text-black m-4  inline-block border rounded-md font-medium p-3 shadow-xl"
           >
             <option value disabled>
               Category
@@ -66,7 +66,12 @@ export default function NewItem() {
             <option value="Other">Other</option>
           </select>
         </div>
-        <button type="submit">+</button>
+        <button
+          type="submit"
+          className="bg-blue-400 border pl-36 pr-36 flex p-1 rounded-md m-6"
+        >
+          +
+        </button>
       </form>
     </main>
   );
