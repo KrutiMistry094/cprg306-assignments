@@ -12,23 +12,34 @@ export default function ItemList() {
     if (sortBy === "category") {
       return a.category.localeCompare(b.category);
     }
-    return a.quantity - b.quantity;
   });
 
   return (
     <div>
-      <button
-        className={sortBy === "name" ? "bg-blue-500 " : ""}
-        onClick={() => setSortBy("name")}
-      >
-        Name
-      </button>
-      <button
-        className={sortBy === "category" ? "bg-blue-500" : ""}
-        onClick={() => setSortBy("category")}
-      >
-        Category
-      </button>
+      <div className="flex m-6 gap-6">
+        <p>Sort by:</p>
+        <button
+          className="onclick: bg-blue-500 hover:bg-yellow-500  focus:bg-yellow-500 "
+          onClick={() => setSortBy("name")}
+        >
+          Name
+        </button>
+        <button
+          className="onclick: bg-blue-500 hover:bg-yellow-500 focus:bg-yellow-500"
+          onClick={() => setSortBy("category")}
+        >
+          Category
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li>
+            {sortItems.map((item) => (
+              <Item key={item} {...item} />
+            ))}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
