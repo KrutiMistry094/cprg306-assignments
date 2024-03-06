@@ -7,15 +7,15 @@ import itemsData from "./items.json";
 export default function Page() {
   const [items, setItem] = useState(itemsData);
 
-  const newItem = (item) => {
-    setItem([...items, item]);
+  const handleNewItem = (newItem) => {
+    setItem([...items, newItem]);
   };
 
   return (
     <div>
       <h1 className="m-3 text-white font-bold text-3xl ">Shopping List</h1>
-      <NewItem onAddItem={newItem} />
-      <ItemList />
+      <NewItem onAddItem={handleNewItem} />
+      <ItemList items={items} />
     </div>
   );
 }

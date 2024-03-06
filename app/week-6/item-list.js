@@ -5,7 +5,7 @@ import Item from "./item.js";
 export default function ItemList({ items }) {
   const [sortBy, setSortBy] = useState("name");
 
-  const sortItems = [...items].sort((a, b) => {
+  const sortItems = items.sort((a, b) => {
     if (sortBy === "name") {
       return a.name.localeCompare(b.name);
     }
@@ -33,11 +33,11 @@ export default function ItemList({ items }) {
       </div>
       <div>
         <ul>
-          <li>
-            {sortItems.map((item) => (
+          {sortItems.map((item, id) => (
+            <div key={id}>
               <Item key={item} {...item} />
-            ))}
-          </li>
+            </div>
+          ))}
         </ul>
       </div>
     </div>

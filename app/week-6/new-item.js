@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function NewItem(onAddItem) {
+export default function NewItem({ onAddItem }) {
   const [name, setName] = useState(" ");
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState("Produce");
@@ -13,14 +13,13 @@ export default function NewItem(onAddItem) {
       quantity,
       category,
     };
-    // const newItem = { id, name, quantity, category };
-    // onAddItem(newItem);
-    onAddItem({ id, name, quantity, category });
+    const newItem = { id, name, quantity, category };
+    onAddItem(newItem);
     setName("");
     setQuantity(1);
     setCategory("Produce");
   };
-  const newId = Math.floor(Math.random() * 1000000);
+  const id = Math.floor(Math.random() * 1000000);
 
   return (
     <main class="flex justify-center">
