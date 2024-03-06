@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <div>
       <h1 className="m-3 text-white font-bold text-3xl ">Shopping List</h1>
-      <NewItem onAddItem={handleNewItem} />
+      <NewItem onAddItem={handleNewItem} className="flex-col items-start" />
       <ItemList items={items} />
     </div>
   );

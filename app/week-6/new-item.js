@@ -22,8 +22,9 @@ export default function NewItem({ onAddItem }) {
   const id = Math.floor(Math.random() * 1000000);
 
   return (
-    <main class="flex justify-center">
+    <main class="flex justify-start ">
       <form onSubmit={handleSubmit} className="m-4 p-4 bg-slate-800 text-black">
+        <p className="font-bold text-xl pt-2 text-white">Add Item</p>
         <div>
           <input
             type="text"
@@ -67,7 +68,7 @@ export default function NewItem({ onAddItem }) {
         </div>
         <button
           type="submit"
-          className="bg-blue-400 border pl-36 pr-36 flex p-1 rounded-md m-6"
+          className="bg-blue-400 border pl-36 pr-36 flex p-1 rounded-md m-6  hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
         >
           +
         </button>

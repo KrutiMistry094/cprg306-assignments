@@ -17,15 +17,15 @@ export default function ItemList({ items }) {
   return (
     <div>
       <div className="flex m-6 gap-6">
-        <p>Sort by:</p>
+        <p className="font-bold text-xl pt-2">Sort by:</p>
         <button
-          className="onclick: bg-blue-500 hover:bg-blue-500  focus:bg-yellow-500 "
+          className="onclick: bg-blue-500 hover:bg-blue-500  focus:bg-yellow-500 rounded-md p-2 font-bold text-xl"
           onClick={() => setSortBy("name")}
         >
           Name
         </button>
         <button
-          className="onclick: bg-blue-500 hover:bg-blue-500 focus:bg-yellow-500"
+          className="onclick: bg-blue-500 hover:bg-blue-500 focus:bg-yellow-500 rounded-md p-2 font-bold text-xl "
           onClick={() => setSortBy("category")}
         >
           Category
